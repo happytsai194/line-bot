@@ -12,8 +12,8 @@ from linebot.models import (
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('i9vPdCkcsH7tLmU3cGDHhkQsFtESNy2XA2XhSn7oBKDNKzutrTnnKqMH1HrmM8LRCkiloHnPCeOzpvXpGoRJykIU6yCFXMoqNbyBjJR22J0gxsXfP51B+QNUBK0qHk06I4yz2yCUc4VF+VdHLwQLIAdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('2edd24064764defb690e1572e0c59649')
+line_bot_api = LineBotApi('av9kJG/rK2DY3BKPiEwVsTHz8xYeA9lK2xhGhMuN2LTRo85lQHS+2oaBytiODi5KB3DSMxWsHp+9mmlEZvQbBr4Cd104Pb3M9UXX0AwztFln3ky63Ee9Q/7CXS4ZTM5OV6g5ZwIqIYJmMkCzI1KJFAdB04t89/1O/w1cDnyilFU=+QNUBK0qHk06I4yz2yCUc4VF+VdHLwQLIAdB04t89/1O/w1cDnyilFU=')
+handler = WebhookHandler('f45e0f7761b2f7c333d7471bcc5d06e1')
 
 
 @app.route("/callback", methods=['POST'])
@@ -37,9 +37,10 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    msg = event.message.text
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text))
+        TextSendMessage(text='吃飽沒'))
 
 
 if __name__ == "__main__":
