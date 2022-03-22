@@ -55,9 +55,9 @@ def handle_message(event):
             r = "嗨"
         elif msg == "你吃飯了嗎":
             r = "還沒"
-        elif msg == "你是誰"
+        elif msg == "你是誰":
             r = "教主"
-        elif msg == "訂位"
+        elif msg == "訂位":
             r = "請給我你的name & phone number"
 
         line_bot_api.reply_message(
